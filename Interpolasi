@@ -1,0 +1,21 @@
+import numpy as np
+from scipy.interpolate import lagrange
+
+print("="*60)
+print("IMPLEMENTASI INTERPOLASI polinomial lagrange")
+print("="*60)
+
+#input Data
+x = np.array([20.0,50.0,80.0],dtype=float)
+y = np.array([45.0,80.0,95.0],dtype=float)
+
+#perhitungan interpolasi
+poly_lagrange = lagrange(x,y)
+
+#menghitung nilai y yang dicari
+x_target = 60.0
+y_pred = poly_lagrange(x_target)
+
+print(f"Nilai Data X (%) : {x}")
+print(f"Nilai Data Y (Mbps):{y}")
+print(f"Estimasi nilai throughput pada saat x = {x_target}% adalah y = {y_pred:.5f} Mbps")
